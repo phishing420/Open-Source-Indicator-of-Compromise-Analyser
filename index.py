@@ -26,7 +26,7 @@ def main():
         print("1. Hash Analysis")
         print("2. Domain Analysis")
         print("3. IP Address Analysis")
-        print("4. File Upload (VirusTotal Scan)")
+        print("4. File Upload")
         print("5. URL Analysis")
         print("6. Exit")
 
