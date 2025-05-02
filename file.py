@@ -1,10 +1,8 @@
+import yara
 import requests
 import json
 import sys
-import os
-import yara
 from time import sleep
-from pathlib import Path
 from config import API_KEY
 
 def typing_effect(words: str):
@@ -15,49 +13,32 @@ def typing_effect(words: str):
     print()
 
 def print_bold(text: str):
-    """Print text in bold"""
     print(f"\033[1m{text}\033[0m")
-
-# Hidden YARA integration (no output changes)
-YARA_RULES_DIR = "yara_rules"
-
-def _load_yara_rules():
-    try:
-        Path(YARA_RULES_DIR).mkdir(exist_ok=True)
-        rule_files = list(Path(YARA_RULES_DIR).glob("*.yar"))
-        return yara.compile(filepaths={str(p): str(p) for p in rule_files}) if rule_files else None
-    except Exception:
-        return None
-
-def _silent_yara_scan(file_path):
-    try:
-        rules = _load_yara_rules()
-        return rules.match(filepath=file_path) if rules else []
-    except Exception:
-        return []
 
 def analyze_file():
     try:
-        # Get file path from user
         file_path = input("ENTER THE PATH OF THE FILE >> ")
         
-        # Silent YARA scan (no output)
-        yara_matches = _silent_yara_scan(file_path)
-        
-        # Original VirusTotal code below (unchanged)
+        # Upload file to VirusTotal (v2)
         with open(file_path, "rb") as file:
             response = requests.post(
                 'https://www.virustotal.com/vtapi/v2/file/scan',
                 files={"file": file},
                 params={"apikey": API_KEY}
             )
-        
-        file_url = f"https://www.virustotal.com/api/v3/files/{response.json()['sha1']}"
+
+        file_sha1 = response.json().get("sha1")
+        if not file_sha1:
+            typing_effect("FAILED TO RETRIEVE SHA1 FROM VT RESPONSE.")
+            return
+
+        # Fetch v3 analysis
+        file_url = f"https://www.virustotal.com/api/v3/files/{file_sha1}"
         headers = {"accept": "application/json", "x-apikey": API_KEY}
-        
-        typing_effect("ANALYSING....")
+        typing_effect("ANALYSING VIA VIRUSTOTAL....")
         report = requests.get(file_url, headers=headers).json()
 
+        # Extract basic info
         attributes = report["data"]["attributes"]
         name = attributes.get("meaningful_name", "N/A")
         file_hash = attributes["sha256"]
@@ -73,27 +54,41 @@ def analyze_file():
         print()
 
         malicious_count = 0
-        print_bold("SCAN RESULTS:")
+        print_bold("VIRUSTOTAL SCAN RESULTS:")
         for engine, result in results.items():
             status = result['category'].upper()
+            label = result.get('result', '')
             if status == 'MALICIOUS':
                 malicious_count += 1
-                status = f"[MALICIOUS] {result.get('result', '')}"
+                typing_effect(f"{engine.upper()}: [MALICIOUS] {label}")
             elif status == 'TYPE-UNSUPPORTED':
-                status = f"[UNSUPPORTED TYPE] {result.get('result', '')}"
+                typing_effect(f"{engine.upper()}: [UNSUPPORTED TYPE] {label}")
             else:
-                status = f"[CLEAN] {result.get('result', '')}"
-
-            typing_effect(f"{engine.upper()}: {status}")
-
+                typing_effect(f"{engine.upper()}: [CLEAN] {label}")
+        
+        # Final verdict
         print()
-        if malicious_count > 0:
-            msg = f"WARNING: {malicious_count} ANTIVIRUS ENGINES DETECTED MALICIOUS CONTENT!"
-        else:
-            msg = "NO ANTIVIRUS ENGINES DETECTED MALICIOUS CONTENT!"
-            
-        print_bold(msg.center(80))
+        verdict = f"WARNING: {malicious_count} DETECTIONS!" if malicious_count else "FILE APPEARS CLEAN."
+        print_bold(verdict.center(80))
         print()
+
+        # === YARA SCANNING SECTION ===
+        print_bold("LOCAL YARA RULES ANALYSIS:")
+        try:
+            # COMPILE RULES FROM FILE (EDIT PATH AS NEEDED)
+            rules = yara.compile(filepath="yara_rules/suspicious_file_analysis.yar")
+
+            # Scan file
+            matches = rules.match(filepath=file_path)
+            if matches:
+                for match in matches:
+                    typing_effect(f"[YARA MATCH] Rule: {match.rule}")
+            else:
+                typing_effect("No YARA rules matched this file.")
+        except yara.Error as ye:
+            typing_effect(f"YARA SCAN FAILED: {str(ye)}")
+        except FileNotFoundError:
+            typing_effect("YARA RULE FILE NOT FOUND.")
 
     except FileNotFoundError:
         typing_effect("ERROR: FILE NOT FOUND!")
