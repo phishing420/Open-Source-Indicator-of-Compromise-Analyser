@@ -1,4 +1,4 @@
-The Open Source IoC Analyzer is a cybersecurity tool designed to help users rapidly assess potential threats by analyzing various Indicators of Compromise (IoCs). Here’s why it’s used and its significance:
+The **Open Source IoC Analyser** is a cybersecurity tool designed to help users rapidly assess potential threats by analyzing various Indicators of Compromise (IoCs). Here’s why it’s used and its significance:
 
 Problem It Solves 🎯
 Cybersecurity teams often face:
