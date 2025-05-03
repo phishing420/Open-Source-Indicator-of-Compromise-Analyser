@@ -61,14 +61,17 @@ Obfuscation techniques (Base64, XOR loops, PowerShell encoding)
 
 Suspicious behaviors (process hollowing, AMSI bypass)
 
+
 **To update rules:**
 
 Add new .yar files to /yara_rules
 
 Re-run file analysis (Option 4)
 
-**Contributing 🤝
-We welcome:**
+
+**Contributing 🤝**
+We welcome:
+
 
 -> New YARA rule submissions
 
