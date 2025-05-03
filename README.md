@@ -1,4 +1,4 @@
-# Open Source IoC Analyzer 🔍🛡️
+# Open Source IoC Analyser 🔍🛡️
 
 **A unified threat intelligence platform for analyzing Indicators of Compromise (IoCs)**  
 *Analyze Hashes, Domains, IPs, URLs & Files with 15+ threat intelligence feeds and YARA rules*
@@ -34,10 +34,35 @@
 **Configuration 🔑**
 Obtain API keys:
 
-VirusTotal --> https://www.virustotal.com/gui/my-apikey
+**VirusTotal** --> https://www.virustotal.com/gui/my-apikey
+**AbuseIPDB** --> https://www.abuseipdb.com/account/api
+**URLScan.io** --> https://urlscan.io/user/profile/
+**Abuse.ch** --> https://urlhaus.abuse.ch/api/
 
-AbuseIPDB --> https://www.abuseipdb.com/account/api
+**Usage 🚀**
 
-URLScan.io --> https://urlscan.io/user/profile/
+    python index.py
+    
+**Main Menu Options:**
 
-Abuse.ch --> https://urlhaus.abuse.ch/api/
+    1. Hash Analysis          # Analyze malware hashes
+    2. Domain Analysis        # Full domain reputation check
+    3. IP Address Analysis    # GeoIP + threat scoring
+    4. File Upload            # YARA + VirusTotal scan
+    5. URL Analysis           # Phishing/suspicious URL check
+    6. Exit
+
+**YARA Rules 🕵️♂️**
+Our pre-configured rules detect:
+
+Common malware families (AgentTesla, RemcosRAT, Formbook)
+
+Obfuscation techniques (Base64, XOR loops, PowerShell encoding)
+
+Suspicious behaviors (process hollowing, AMSI bypass)
+
+**To update rules:**
+
+Add new .yar files to /yara_rules
+
+Re-run file analysis (Option 4)
