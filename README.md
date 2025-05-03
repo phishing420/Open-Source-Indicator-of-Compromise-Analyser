@@ -30,3 +30,12 @@
     pip install -r requirements.txt
     # Create YARA rules directory
     mkdir yara_rules
+
+Configuration 🔑
+Obtain API keys:
+
+VirusTotal
+
+AbuseIPDB
+
+URLScan.io
