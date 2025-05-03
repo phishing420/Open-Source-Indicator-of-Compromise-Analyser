@@ -23,10 +23,10 @@
 
 ## Installation 🛠️
 
-  # Clone repository
-  git clone https://github.com/yourusername/open-source-ioc-analyzer.git
-  cd open-source-ioc-analyzer         
-  # Install dependencies
-  pip install -r requirements.txt
-  # Create YARA rules directory
-  mkdir yara_rules
+    # Clone repository
+    git clone https://github.com/yourusername/open-source-ioc-analyzer.git
+    cd open-source-ioc-analyzer         
+    # Install dependencies
+    pip install -r requirements.txt
+    # Create YARA rules directory
+    mkdir yara_rules
