@@ -7,8 +7,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Open Source](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
 
-![Demo Banner](https://via.placeholder.com/800x200.png?text=Open+Source+IoC+Analyzer+Demo+GIF+Here)
-
 ## Features ✨
 
 - **Multi-IoC Analysis**  
