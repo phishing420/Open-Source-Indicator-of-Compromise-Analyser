@@ -81,7 +81,7 @@
 
 **In case of any Python-based error related to dependencies, refer to this video**
 
-- **[Youtube]([https://www.markdownguide.org](https://www.youtube.com/watch?v=VtjZFWqWisk&pp=ygV4VG8gaW5zdGFsbCBQeXRob24gcGFja2FnZXMgc3lzdGVtLXdpZGUsIHRyeSBhcHQgaW5zdGFsbCBweXRob24zLXh5eiwgd2hlcmUgeHl6IGlzIHRoZSBwYWNrYWdlIHlvdSBhcmUgdHJ5aW5nIHRvIGluc3RhbGwu0gcJCYQJAYcqIYzv))**
+- [📺 Watch Installation Tutorial](https://www.youtube.com/watch?v=VtjZFWqWisk)
 
 **Created with ❤️ by Anonymous**
 
