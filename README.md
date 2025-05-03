@@ -31,11 +31,13 @@
     # Create YARA rules directory
     mkdir yara_rules
 
-Configuration 🔑
+**Configuration 🔑**
 Obtain API keys:
 
-VirusTotal
+VirusTotal --> https://www.virustotal.com/gui/my-apikey
 
-AbuseIPDB
+AbuseIPDB --> https://www.abuseipdb.com/account/api
 
-URLScan.io
+URLScan.io --> https://urlscan.io/user/profile/
+
+Abuse.ch --> https://urlhaus.abuse.ch/api/
