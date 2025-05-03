@@ -32,12 +32,12 @@
     mkdir yara_rules
 
 **Configuration 🔑**
-Obtain API keys:
+**Obtain API keys:**
 
-**VirusTotal** --> https://www.virustotal.com/gui/my-apikey
-**AbuseIPDB** --> https://www.abuseipdb.com/account/api
-**URLScan.io** --> https://urlscan.io/user/profile/
-**Abuse.ch** --> https://urlhaus.abuse.ch/api/
+- **VirusTotal** --> https://www.virustotal.com/gui/my-apikey
+- **AbuseIPDB** --> https://www.abuseipdb.com/account/api
+- **URLScan.io** --> https://urlscan.io/user/profile/
+- **Abuse.ch** --> https://urlhaus.abuse.ch/api/
 
 **Usage 🚀**
 
@@ -53,28 +53,35 @@ Obtain API keys:
     6. Exit
 
 **YARA Rules 🕵️♂️**
-Our pre-configured rules detect:
+**Our pre-configured rules detect:**
 
-Common malware families (AgentTesla, RemcosRAT, Formbook)
+- Common malware families (AgentTesla, RemcosRAT, Formbook)
 
-Obfuscation techniques (Base64, XOR loops, PowerShell encoding)
+- Obfuscation techniques (Base64, XOR loops, PowerShell encoding)
 
-Suspicious behaviors (process hollowing, AMSI bypass)
+- Suspicious behaviors (process hollowing, AMSI bypass)
 
 
 **To update rules:**
 
-Add new .yar files to /yara_rules
+- Add new .yar files to /yara_rules
 
-Re-run file analysis (Option 4)
+- Re-run file analysis (Option 4)
 
 
 **Contributing 🤝**
-We welcome:
+**We welcome:**
 
 
--> New YARA rule submissions
+- New YARA rule submissions
 
--> Additional API integrations
+- Additional API integrations
 
--> UI/UX improvements
+- UI/UX improvements
+
+**In case of any Python-based error related to dependencies, refer to this video**
+
+- [https://www.youtube.com/watch?v=VtjZFWqWisk&pp=ygV4VG8gaW5zdGFsbCBQeXRob24gcGFja2FnZXMgc3lzdGVtLXdpZGUsIHRyeSBhcHQgaW5zdGFsbCBweXRob24zLXh5eiwgd2hlcmUgeHl6IGlzIHRoZSBwYWNrYWdlIHlvdSBhcmUgdHJ5aW5nIHRvIGluc3RhbGwu0gcJCYQJAYcqIYzv](Youtube)
+
+**Created with ❤️ by Anonymous**
+Email: hack.test2301@gmail.com
