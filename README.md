@@ -66,3 +66,12 @@ Suspicious behaviors (process hollowing, AMSI bypass)
 Add new .yar files to /yara_rules
 
 Re-run file analysis (Option 4)
+
+**Contributing 🤝
+We welcome:
+**
+-> New YARA rule submissions
+
+-> Additional API integrations
+
+-> UI/UX improvements
