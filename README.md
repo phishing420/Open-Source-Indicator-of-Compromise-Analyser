@@ -81,7 +81,9 @@
 
 **In case of any Python-based error related to dependencies, refer to this video**
 
-- [https://www.youtube.com/watch?v=VtjZFWqWisk&pp=ygV4VG8gaW5zdGFsbCBQeXRob24gcGFja2FnZXMgc3lzdGVtLXdpZGUsIHRyeSBhcHQgaW5zdGFsbCBweXRob24zLXh5eiwgd2hlcmUgeHl6IGlzIHRoZSBwYWNrYWdlIHlvdSBhcmUgdHJ5aW5nIHRvIGluc3RhbGwu0gcJCYQJAYcqIYzv](Youtube)
+- [https://www.youtube.com/watch?v=VtjZFWqWisk&pp=ygV4VG8gaW5zdGFsbCBQeXRob24gcGFja2FnZXMgc3lzdGVtLXdpZGUsIHRyeSBhcHQgaW5zdGFsbCBweXRob24zLXh5eiwgd2hlcmUgeHl6IGlzIHRoZSBwYWNrYWdlIHlvdSBhcmUgdHJ5aW5nIHRvIGluc3RhbGwu0gcJCYQJAYcqIYzv]
+
 
 **Created with ❤️ by Anonymous**
-Email: hack.test2301@gmail.com
+
+**Email**: hack.test2301@gmail.com
