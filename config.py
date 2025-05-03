@@ -1,8 +1,8 @@
 #config.py
-API_KEY = ""
-URLSCAN_API_KEY = ""
-ABUSE_CH_API_KEY = ""
-ABUSEIPDB_API_KEY = ""
+API_KEY = "VirusTotal_API Key"
+URLSCAN_API_KEY = "URLscan_API Key"
+ABUSE_CH_API_KEY = "Abuse.ch_API Key"
+ABUSEIPDB_API_KEY = "AbuseIPDB_API Key"
 
 
 #URL
